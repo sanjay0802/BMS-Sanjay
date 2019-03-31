@@ -25,12 +25,24 @@ export class ApiServiceProvider {
     let body = new URLSearchParams();
     body.set('customername', data.name);
     body.set('Ostock', data.stock);
-    body.set('date', data.date)
+    body.set('createdDate', data.date)
     return this.http.post(CONSTANTS.BASE_URL + 'register', body.toString(), this.options)
   }
 
   searchCustomer (name) {
     return this.http.get(CONSTANTS.BASE_URL + 'search/' + name)
+
+  }
+
+  updateCusotmerDetails(data) {
+    let body = new URLSearchParams();
+    body.set('customername', data.customername);
+    body.set('Ostock', data.Ostock);
+    body.set('updatedDate', data.updatedDate)
+    body.set('filled', data.filled);
+    body.set('empty', data.empty);
+    body.set('dcnumber', data.dcnumber)
+    return this.http.post(CONSTANTS.BASE_URL + 'updatestock', body.toString(), this.options)
 
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ApiServiceProvider} from "../../providers/api-service/api-service";
+import {UpdatePage} from "../update/update";
 
 /**
  * Generated class for the SearchPage page.
@@ -8,7 +9,6 @@ import {ApiServiceProvider} from "../../providers/api-service/api-service";
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 @IonicPage()
 @Component({
   selector: 'page-search',
@@ -27,4 +27,8 @@ export class SearchPage {
         this.customerList = res
       })
     }
+
+  updateCustomer(customer) {
+    this.navCtrl.push(UpdatePage, {customer})
+  }
 }

@@ -1,8 +1,7 @@
 <ion-content  color="secondary">
   <ion-searchbar #q (ionChange)="searchProducts(q.value)" placeholder="Search Customer"></ion-searchbar>
-</ion-content>
 <ion-list *ngIf="customerList &&  (customerList.length > 0)">
-  <ion-card *ngFor="let customer of customerList">
+  <ion-card *ngFor="let customer of customerList" (click)="updateCustomer(customer)">
     <ion-card-content>
       <ion-row>
         <ion-col text-center>
@@ -13,3 +12,4 @@
     </ion-card-content>
   </ion-card>
 </ion-list>
+</ion-content>

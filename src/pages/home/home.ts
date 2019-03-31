@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {RegistrationPage} from "../registration/registration";
+import {SearchPage} from "../search/search";
 
 /**
  * Generated class for the HomePage page.
@@ -33,7 +34,11 @@ export class HomePage {
   }
 
   moveToPage(menuItem) {
-    this.navCtrl.push(menuItem.page);
+    if (menuItem.page === 'RegistrationPage') {
+      this.navCtrl.push(RegistrationPage);
+    } else {
+      this.navCtrl.push(SearchPage);
+    }
   }
 
 }

@@ -13,17 +13,24 @@ import {WidgetUtilService} from "../utils/widget-utils";
 import {HomePage} from "../pages/home/home";
 import {HomePageModule} from "../pages/home/home.module";
 import {RegistrationPage} from "../pages/registration/registration";
+import {RegistrationPageModule} from "../pages/registration/registration.module";
+import {SearchPageModule} from "../pages/search/search.module";
+import {SearchPage} from "../pages/search/search";
+import {UpdatePageModule} from "../pages/update/update.module";
+import {UpdatePage} from "../pages/update/update";
 
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage,
-    RegistrationPage
+    LoginPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HomePageModule,
+    RegistrationPageModule,
+    SearchPageModule,
+    UpdatePageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -31,7 +38,9 @@ import {RegistrationPage} from "../pages/registration/registration";
     MyApp,
     LoginPage,
     HomePage,
-    RegistrationPage
+    RegistrationPage,
+    SearchPage,
+    UpdatePage
   ],
   providers: [
     StatusBar,
