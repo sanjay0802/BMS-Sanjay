@@ -1,0 +1,30 @@
+<ion-content color="secondary">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Create Customer account!</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input type="text"  placeholder=" Enter Customer Name" required #name></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" placeholder="Enter Customer Opening Stock" required #stock></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-datetime display-format="MMM DD, YYYY HH:mm" #date></ion-datetime>
+            </ion-item>
+          </div>
+          <div padding>
+            <button ion-button (click)="register(name.value,stock.value,date.value)" size="large">Save</button>
+          </div>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+
+
+
+</ion-content>

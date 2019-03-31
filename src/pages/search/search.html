@@ -1,0 +1,15 @@
+<ion-content  color="secondary">
+  <ion-searchbar #q (ionChange)="searchProducts(q.value)" placeholder="Search Customer"></ion-searchbar>
+</ion-content>
+<ion-list *ngIf="customerList &&  (customerList.length > 0)">
+  <ion-card *ngFor="let customer of customerList">
+    <ion-card-content>
+      <ion-row>
+        <ion-col text-center>
+          <ion-icon name="cube" color="grey"></ion-icon>
+          <span>{{customer.customername}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-list>
