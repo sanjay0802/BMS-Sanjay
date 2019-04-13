@@ -18,6 +18,16 @@ import {SearchPageModule} from "../pages/search/search.module";
 import {SearchPage} from "../pages/search/search";
 import {UpdatePageModule} from "../pages/update/update.module";
 import {UpdatePage} from "../pages/update/update";
+import { VendorPage } from '../pages/vendor/vendor';
+import { VendorRegistrationPage } from '../pages/vendor-registration/vendor-registration';
+import { VendorSearchPage } from '../pages/vendor-search/vendor-search';
+import { VendorUpdatePage } from '../pages/vendor-update/vendor-update';
+import { GenerateReportPage } from '../pages/generate-report/generate-report';
+import { VendorPageModule } from '../pages/vendor/vendor.module';
+import { VendorRegistrationPageModule } from '../pages/vendor-registration/vendor-registration.module';
+import { VendorSearchPageModule } from '../pages/vendor-search/vendor-search.module';
+import { VendorUpdatePageModule } from '../pages/vendor-update/vendor-update.module';
+import { GenerateReportPageModule } from '../pages/generate-report/generate-report.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +41,11 @@ import {UpdatePage} from "../pages/update/update";
     RegistrationPageModule,
     SearchPageModule,
     UpdatePageModule,
+    VendorPageModule,
+    VendorRegistrationPageModule,
+    VendorSearchPageModule,
+    VendorUpdatePageModule,
+    GenerateReportPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -40,7 +55,14 @@ import {UpdatePage} from "../pages/update/update";
     HomePage,
     RegistrationPage,
     SearchPage,
-    UpdatePage
+    UpdatePage,
+    VendorPage,
+    VendorRegistrationPage,
+    VendorSearchPage,
+    VendorUpdatePage,
+    GenerateReportPage
+
+    
   ],
   providers: [
     StatusBar,
