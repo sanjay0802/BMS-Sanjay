@@ -28,9 +28,11 @@ export class VendorRegistrationPage {
   }
 
   
-  registerVendor(mStock,aStock,bStock,date) {
-    const modifiedDate = date.day.toString() + '/' + date.month.toString() + '/' + date.year.toString()
-    this.apiService.registerVendors( { mStock :mStock, aStock:aStock,bStock:bStock, date:modifiedDate }).subscribe(res => {
+  registerVendor(vendorName,oStock,date) {
+    console.log('==========1234');
+    const modifiedDate1 = date.day.toString() + '/' + date.month.toString() + '/' + date.year.toString()
+    console.log('==========1234'+modifiedDate1);
+    this.apiService.registerVendors( { vendorName :vendorName, oStock:oStock, date:modifiedDate1 }).subscribe(res => {
       this.widgetService.showToast('Vendor details saved successfully...')
       this.navCtrl.push(VendorPage)
     })

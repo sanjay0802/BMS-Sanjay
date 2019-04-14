@@ -20,6 +20,13 @@ export class VendorUpdatePage {
   vendorData:any={};
   constructor(public navCtrl: NavController, public navParams: NavParams,public apiService:ApiServiceProvider,public widgetService:WidgetUtilService ) {
   this.vendorData=this.navParams.get('vendor')
+  for (var property in this.vendorData) {
+    if (this.vendorData.hasOwnProperty(property)) {
+        // do stuff
+        console.log(this.vendorData.vendorName)
+        console.log(this.vendorData.oStock)
+    }
+}
   }
 
   ionViewDidLoad() {
@@ -27,7 +34,7 @@ export class VendorUpdatePage {
   }
   updateEntryForVendor(filledBottle,emptyBottle,dc,date) {
     this.apiService.updateVendorDetails(
-      {filled: filledBottle, empty: emptyBottle, dcnumber: dc, Ostock: this.vendorData.Ostock, updatedDate: date, vendorName: this.vendorData.vendorName})
+      {filled: filledBottle, empty: emptyBottle, dcnumber: dc, oStock: this.vendorData.oStock, updatedDate: date, vendorName: this.vendorData.vendorName})
       .subscribe((res: any)=>{
         if(res.success) {
           this.widgetService.showToast('Updated Successfully...')

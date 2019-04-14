@@ -50,27 +50,29 @@ export class ApiServiceProvider {
     return this.http.get(CONSTANTS.BASE_URL + 'searchVendor/' + vendorName)
 
   }
+  
 
   updateVendorDetails(data) {
+    console.log('updateVendorDetails', data)
     let body = new URLSearchParams();
     body.set('vendorName', data.vendorName);
-    body.set('Ostock', data.Ostock);
+    body.set('oStock', data.oStock);
     body.set('updatedDate', data.updatedDate)
     body.set('filled', data.filled);
     body.set('empty', data.empty);
     body.set('dcnumber', data.dcnumber)
-    return this.http.post(CONSTANTS.BASE_URL + 'updatestockv', body.toString(), this.options)
+    return this.http.post(CONSTANTS.BASE_URL + 'vendorupdate', body.toString(), this.options)
 
   }
   registerVendors(vendorData){
     let body = new URLSearchParams();
-    body.set('mStock', vendorData.mStock);
-    body.set('aStock',vendorData.aStock);
-    body.set('bStock',vendorData.bStock);
-    body.set('createdDate',vendorData.stockDate)
-    return this.http.post(CONSTANTS.BASE_URL + 'registerVendor', body.toString(), this.options)
+    body.set('vendorName', vendorData.name);
+    body.set('oStock', vendorData.oStock);
+    body.set('createdDate', vendorData.date1)
+    return this.http.post(CONSTANTS.BASE_URL + 'vendorregistration', body.toString(), this.options)
 
 
-
+   
+      
   }
 }
